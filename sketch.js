@@ -21,12 +21,7 @@ var isGameOver = false;
 function preload() {
   backgroundImg = loadImage("./assets/background.gif");
   towerImage = loadImage("./assets/tower.png");
-  boatSpritedata = loadJSON("assets/boat/boat.json");
-  boatSpritesheet = loadImage("assets/boat/boat.png");
-  brokenBoatSpritedata = loadJSON("assets/boat/broken_boat.json");
-  brokenBoatSpritesheet = loadImage("assets/boat/broken_boat.png");
-  waterSplashSpritedata = loadJSON("assets/water_splash/water_splash.json");
-  waterSplashSpritesheet = loadImage("assets/water_splash/water_splash.png");
+ 
 }
 
 function setup() {
@@ -45,19 +40,7 @@ function setup() {
     boatAnimation.push(img);
   }
 
-  var brokenBoatFrames = brokenBoatSpritedata.frames;
-  for (var i = 0; i < brokenBoatFrames.length; i++) {
-    var pos = brokenBoatFrames[i].position;
-    var img = brokenBoatSpritesheet.get(pos.x, pos.y, pos.w, pos.h);
-    brokenBoatAnimation.push(img);
-  }
 
-  var waterSplashFrames = waterSplashSpritedata.frames;
-  for (var i = 0; i < waterSplashFrames.length; i++) {
-    var pos = waterSplashFrames[i].position;
-    var img = waterSplashSpritesheet.get(pos.x, pos.y, pos.w, pos.h);
-    waterSplashAnimation.push(img);
-  }
 }
 
 function draw() {
